@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import top.fanaozhe.springbootdemo.entity.Book;
 
 import javax.transaction.Transactional;
-import java.beans.Transient;
 
 /**
  * @author faz
