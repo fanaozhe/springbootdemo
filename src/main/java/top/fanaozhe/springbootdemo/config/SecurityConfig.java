@@ -1,3 +1,4 @@
+/*
 package top.fanaozhe.springbootdemo.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -32,10 +33,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
-  /*  @Bean
+  */
+/*  @Bean
     PasswordEncoder PasswordEncoder(){
         return NoOpPasswordEncoder.getInstance();
-    }*/
+    }*//*
+
 
     @Override
     protected  void configure(AuthenticationManagerBuilder auth) throws Exception{
@@ -153,3 +156,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .disable();
     }
 }
+*/
