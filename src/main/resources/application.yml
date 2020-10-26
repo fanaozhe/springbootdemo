@@ -4,11 +4,13 @@ spring:
     url: jdbc:mysql://101.132.107.204:3306/wechat?useSSL=false&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     username: root
     password: root
+    type: com.alibaba.druid.pool.DruidDataSource
   jpa:
     show-sql: true
     database: mysql
     hibernate:
       ddl-auto: update
+    open-in-view: false
 
 #mybatis配置
 mybatis:
