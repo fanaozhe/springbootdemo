@@ -5,12 +5,22 @@ spring:
     username: root
     password: root
     type: com.alibaba.druid.pool.DruidDataSource
+  #jpa配置
   jpa:
     show-sql: true
     database: mysql
     hibernate:
       ddl-auto: update
     open-in-view: false
+  #RabbitMQ配置
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    exchangename: direct-exchange-faz
+    queuename: direct-queue-faz
+    routingkey: direct-routingkey-faz
 
 #mybatis配置
 mybatis:
@@ -18,3 +28,6 @@ mybatis:
   type-aliases-package: top.fanaozhe.springbootdemo.entity
   configuration:
     map-underscore-to-camel-case: true
+
+
+

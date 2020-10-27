@@ -1,4 +1,4 @@
-package top.fanaozhe.springbootdemo.config;
+package top.fanaozhe.springbootdemo.config.securityconfig;
 
 import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.access.AccessDeniedException;

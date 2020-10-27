@@ -1,4 +1,4 @@
-package top.fanaozhe.springbootdemo.config;
+package top.fanaozhe.springbootdemo.config.securityconfig;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.ConfigAttribute;
