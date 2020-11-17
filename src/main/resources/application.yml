@@ -18,9 +18,25 @@ spring:
     port: 5672
     username: guest
     password: guest
+    #virtual-host: /
     exchangename: direct-exchange-faz
+    delayexchangename: direct-delayexchange-faz
     queuename: direct-queue-faz
+    delayqueuename: direct-delayqueue-faz
     routingkey: direct-routingkey-faz
+    delayroutingkey: direct-delayroutingkey-faz
+  redis:
+    host: 101.132.107.204
+    port: 6379
+    #password: requirepass
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 500
+        min-idle: 0
+    lettuce:
+      shutdown-timeout: 0
 
 #mybatis配置
 mybatis:
@@ -29,5 +45,10 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
 
-
+#阿里云短信配置
+templateCode: SMS_197610357
+#templateCode: SMS_199198112
+signName: 杭城流浪者
+accessKeyId: LTAI4FyjHiwGgK6UyYX3jp2T
+secret: bCKGM6thpmnjuQg9AYtK1aWu1w7wHm
 
