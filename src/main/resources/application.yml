@@ -14,7 +14,7 @@ spring:
     open-in-view: false
   #RabbitMQ配置
   rabbitmq:
-    host: 127.0.0.1
+    host: 101.132.107.204
     port: 5672
     username: guest
     password: guest
