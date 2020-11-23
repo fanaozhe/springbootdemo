@@ -16,6 +16,11 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <!--docker私服地址-->
+        <docker.repository>docker.io</docker.repository>
+        <docker.image.prefix>fanaozhe</docker.image.prefix>
+        <registry_username>fanaozhe</registry_username>
+        <registry_password>zyd521110927</registry_password>
     </properties>
 
     <dependencies>
@@ -113,6 +118,36 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <!--使用maven插件构建docker镜像-->
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.4.0</version>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <!--如果package时不想用docker打包,就注释掉这个goal-->
+                        <phase>package</phase>
+                        <!--<goals>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                        </goals>-->
+                    </execution>
+                </executions>
+                <configuration>
+                    <!--你需要配置的地方-->
+                    <useMavenSettingsForAuth>true</useMavenSettingsForAuth>
+                    <!--指定仓库名/镜像名-->
+                    <repository>${docker.repository}/${docker.image.prefix}/${project.artifactId}</repository>
+                    <!--指定tag -->
+                    <tag>${project.version}</tag>
+                    <buildArgs>
+                        <!--指定参数jar-->
+                        <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
             </plugin>
         </plugins>
     </build>
